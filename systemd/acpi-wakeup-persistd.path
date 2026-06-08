@@ -1,0 +1,8 @@
+[Unit]
+Description=Watch /proc/acpi/wakeup for changes
+
+[Path]
+PathChanged=/proc/acpi/wakeup
+
+[Install]
+WantedBy=paths.target

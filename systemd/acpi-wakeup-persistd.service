@@ -1,0 +1,26 @@
+[Unit]
+Description=Persist ACPI wakeup sources at boot
+DefaultDependencies=no
+After=sysinit.target
+Before=sleep.target
+# Ensure config file exists
+ConditionPathExists=/etc/acpi-wakeup-persistd/config.conf
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/lib/acpi-wakeup-persistd/main.py run --config /etc/acpi-wakeup-persistd/config.conf
+# Security Sandboxing
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+NoNewPrivileges=yes
+ReadWritePaths=/proc/acpi/wakeup
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=acpi-wakeup-persistd
+
+[Install]
+WantedBy=sysinit.target
+WantedBy=multi-user.target
