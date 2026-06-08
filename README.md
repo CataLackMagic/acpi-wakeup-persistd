@@ -65,4 +65,4 @@ Linux often enables wakeup sources by default that you may want to disable (e.g.
 
 ## License
 
-MIT
+GPLv3
