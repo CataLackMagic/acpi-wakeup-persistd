@@ -212,7 +212,10 @@ def main():
 
     args = parser.parse_args()
 
-    setup_logging(debug=args.debug)
+    try:
+        setup_logging(debug=args.debug)
+    except Exception as e:
+        logger.info("debug not specified. Logs will be set to INFO") 
 
     if args.command == 'generate-config':
         generate_default_config(args.output)
