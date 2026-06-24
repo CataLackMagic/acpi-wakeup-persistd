@@ -26,7 +26,7 @@ Linux often enables wakeup sources by default that you may want to disable (e.g.
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/acpi-wakeup-persistd.git
+   git clone https://github.com/CataLackMagic/acpi-wakeup-persistd.git
    cd acpi-wakeup-persistd
    ```
 
@@ -66,3 +66,4 @@ Linux often enables wakeup sources by default that you may want to disable (e.g.
 ## License
 
 GPLv3
+
